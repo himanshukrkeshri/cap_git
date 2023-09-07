@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONLINE BOOKSTORE</title>
+</head>
+
+<body>
+    <script>
+        function bookstore(title, author, genre, price){
+  let accountDetails = {};
+
+  accountDetails.title = title;
+  accountDetails.author = author;
+  accountDetails.genre = genre;
+  accountDetails.price = price;
+  
+
+	accountDetails.printAccountDetails = function () {
+    console.log( 'author: ', this.author, 'genre: ', this.genre, 'price: ', this.price,);
+  }
+
+  return accountDetails;
+}
+
+let bookinfo = bookstore(1290337843, 5454545, 'Savings', 90000)
+
+console.log(bookinfo) 
+    </script>
+</body>
+</html>
