@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BANK ACCOUNT MANAGMENT</title>
+</head>
+<body>
+    <script>
+        function account(accountNumber,name,type,balance){
+  let accountDetails = {};
+
+  accountDetails.accountNumber = accountNumber;
+  accountDetails.name = name;
+  accountDetails.type = type;
+  accountDetails.balance = balance;
+  
+
+	accountDetails.printAccountDetails = function () {
+    console.log('Name: ', this.name, 'Type: ', this.type, 'Bal: ', this.balance);
+  }
+
+  return accountDetails;
+}
+
+let vivekAccount = account(1290337843, 'Vivek', 'Savings', 90000)
+
+console.log(vivekAccount) 
+    </script>
+</body>
+</html>
