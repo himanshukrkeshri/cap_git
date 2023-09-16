@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide Show</title>
+    <style>
+        img{
+            width:300px;
+        }
+    </style>
+</head>
+<body>
+    <img src ="" alt="">
+<button id ="prev"> < </button>
+<button id ="next"> > </button>
+</body>
+</html>
+<script>
+     let imageArr = [
+     "https://www.google.com/search?sca_esv=565908291&sxsrf=AM9HkKnU8S7oES9lVvZYrIKKw2Hp7qBF2Q:1694865479788&q=image+of+masai+classes&tbm=isch&source=lnms&sa=X&ved=2ahUKEwjbn_X2ia-BAxVESmwGHQUvAlwQ0pQJegQIDRAB&biw=767&bih=698&dpr=1.25#imgrc=MLNYa3ZmlWCK3M";
+     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRl0OWY6YRI9I0eL1GFXUaaRGrOt9e1fhdjFw&usqp=CAU";
+     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ663U7HUlROl3MI7qT0o_CnxutpRXppT7tJg&usqp=CAU";
+     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQptYVU75qG5HbBu8zZ8LIljRvvWy9tbVxOQQ&usqp=CAU";
+     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTljI3lcdmfTwM94opm1h7BECSpJ4WspUBXMA&usqp=CAU";
+
+     ];
+     let image = document.querySelector("img");
+     let prev = document.getElementById("prev");
+     let next = document.getElementById("next");
+     let currentImg = 0;
+
+     image.setAttribute("src",imageArr[currentImg]);
+
+     prev.addEventListener("click",function(){
+        currentImg--
+        if(currentImg<0)
+        {
+            currentImg = imageArr.length-1;
+        }
+        image.setAttribute("src",imageArr[currentImg]);
+     })
+     next.addEventListener("click",function(){
+        currentImg++
+        if(currentImg>=imageArr.length)
+        {
+            currentImg=0;
+        }
+        image.setAttribute("src",imageArr[currentImg]);
+     })
+</script>
