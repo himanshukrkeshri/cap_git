@@ -4,49 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
-<body>
     <style>
         *{
             text-align: center;
             margin: 20px;
         }
     </style>
-</body>
-<div id ="stopwatch">0</div>
+</head>
+<body>
+    <div id ="stopwatch">0</div>
 <button onclick="start()">Start</button>
 <button onclick="pause()">Pause</button>
 <button onclick="reset()">Reset</button>
 <div id="run">false</div>
-
+</body>
 <script>
     let display = document.getElementById("stopwatch");
     let run = document.getElementById("run");
     let seconds = 0;
     let timer = null;
-    let runing = false;
+    let running = false;
 
 
     function start(){
-       if(runing == false){
-        runing = true;
+       if(running==false){
+        running=true;
         timer = setInterval(updateWatch,1000);
        }
-       run.textContent = runing;
+       run.textContent=running;
     }
     function pause(){
-        runing = false;
+        running=false;
         clearInterval(timer);
-        run.textContent = runing;
+        run.textContent = running;
     }
     function reset(){
-        runing = false;
+        running=false;
         clearInterva(timer)
         seconds = 0;
         updateWatch();
     }
     function updateWatch(){
-        if(runing==true){
+        if(running==true){
             seconds++;
         }
         dispaly.textContent=seconds
